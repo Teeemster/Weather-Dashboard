@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Weather App</title>
+</head>
+
+
+<body>
+    <!-- Header -->
+    <header class="d-flex justify-content-center jumbotron">
+        <h1 class="display-3">Weather Dashboard</h1>
+    </header>
+
+    <!-- Weather Primary Div Content -->
+
+
+    <!-- Overall Dashboard -->
+    <div id="overallDashboard" class="row d-flex justify-content-center">
+
+        <!-- City Search-->
+        <section class="col-4" id="citySearch">
+
+            Search For a City:
+            <br>
+            <textarea id="cityTextArea"></textarea>
+            <br>
+            <button id="searchButton">Search</button>
+            <article id="priorCityContainer"></article>
+
+        </section>
+
+
+        <section class="col-8" id="weatherResult">
+
+            <!-- Current Day Forecast -->
+            <article id="currentDayForecast" class="col-12">Current Weather:</article>
+
+            <!-- 5-Day Forecast: -->
+            <article id="fiveDayForecast" class="col-12">5-Day Forecast:</article>
+
+        </section>
+    </div>
+
+
+    <script src="./assets/js/weather.js"></script>
+
+
+</body>
+
+</html>
