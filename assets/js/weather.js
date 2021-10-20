@@ -2,9 +2,10 @@
 var searchButton = document.getElementById("searchButton");
 var priorCityContainer = document.getElementById("priorCityContainer");
 var cityTextArea = document.getElementById("cityTextArea");
+var currentDayForecast = document.getElementById("currentDayForecast");
 
 //API Variables
-var requestURL = "api.openweathermap.org/data/2.5/forecast?q="
+var requestURL = "https://api.openweathermap.org/data/2.5/forecast?q="
 var apiKey = "&appid=e7ddda053e014bb0464681d224273dcf";
 
 //City Search Function and API Pull Function
@@ -28,6 +29,12 @@ searchButton.addEventListener("click", function () {
         })
         .then(function (data) {
             console.log(data);
+            for (var i = 0; i < data.length; i++) {
+                var forecastInfo = data[0]
+                console.log(forecastInfo.list)
+            }
         })
+    
+    
 });
 
