@@ -1,5 +1,6 @@
 //Form Variables
 var searchButton = document.getElementById("searchButton");
+var priorCity = document.getElementsByClassName("priorCity");
 var priorCityContainer = document.getElementById("priorCityContainer");
 var cityTextArea = document.getElementById("cityTextArea");
 var currentDayForecast = document.getElementById("currentDayForecast");
@@ -15,11 +16,11 @@ var uvRequestURL = "https://api.openweathermap.org/data/2.5/onecall?"
 
 //City Search Function and API Pull Function
 searchButton.addEventListener("click", function () {
-
     //City Search and Prior History Append
     var cityTextContent = cityTextArea.value;
     var listItemEl = document.createElement("button");
     listItemEl.className = "priorCity col-8";
+    listItemEl.id = cityTextContent;
     listItemEl.textContent = cityTextContent;
     priorCityContainer.appendChild(listItemEl);
 
@@ -53,6 +54,9 @@ searchButton.addEventListener("click", function () {
                 fiveDayList.appendChild(tempItem);
             }
 
+            //Store Five Day Forecast
+            localStorage.setItem(cityTextContent, JSON.stringify(weatherInfo));
+
         })
 
     //API Current URL
@@ -77,6 +81,10 @@ searchButton.addEventListener("click", function () {
             currTempItem.textContent = currWeatherInfo;
             currDayList.appendChild(currTempItem);
 
+            //Store Current Day Weather
+            var currWeatherStore = cityTextContent + " current"
+            localStorage.setItem(currWeatherStore, JSON.stringify(currWeatherInfo))
+
             //UV Index Pull
             fetch(fullUVRequestURL)
                 .then(function (response) {
@@ -86,8 +94,24 @@ searchButton.addEventListener("click", function () {
                     var currUVItem = document.createElement("li");
                     currUVItem.textContent = "UV Index: " + data.current.uvi;
                     currDayList.appendChild(currUVItem);
+
+                    //Store Current UV
+                    var currUVStore = cityTextContent + " current UV"
+                    localStorage.setItem(currUVStore, JSON.stringify(data.current.uvi))
                 })
         })
 
 });
 
+
+console.log(typeof priorCity);
+console.log(typeof searchButton);
+
+//City Prior Search
+priorCity.addEventListener("click", function () {
+    console.log("hello world")
+    currentDayForecast.textContent = "";
+    fiveDayForecast.textContent = "";
+    fiveDayList.textContent = "";
+    currDayList.textContent = "";
+});
