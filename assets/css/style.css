@@ -1,4 +1,62 @@
+body {
+    background-color: #F7B538;
+}
+
 li {
-    border: solid 1px #024e76;
     margin: 8px;
+    list-style-type: none;
+    padding: 5px;
+    font-weight: bold;
+}
+
+li::before {
+    content: "🐞"
+}
+
+textarea {
+    border: solid 3px yellow;
+    outline: none;
+    resize: none;
+    text-align: center;
+}
+
+#jumboTron {
+    background-color: #d8572a;
+    border-bottom: solid 3px black;
+}
+
+#citySearch {
+    text-align: center;
+}
+
+.priorCity {
+    border-radius: 15px;
+    background-color: #db7c26;
+    font-weight: normal;
+}
+
+.priorCity:focus {
+    background-color: #C32F27;
+}
+
+#searchButton {
+    border-radius: 15px;
+    background-color: yellow;
+    font-weight: normal;
+}
+
+#searchButton:focus {
+    background-color: #C32F27;
+}
+
+#favorable {
+    color: greenyellow;
+}
+
+#moderate {
+    color: yellow;
+}
+
+#severe {
+    color:red;
 }

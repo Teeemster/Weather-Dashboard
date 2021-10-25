@@ -13,24 +13,31 @@
 
 <body>
     <!-- Header -->
-    <header class="d-flex justify-content-center jumbotron">
-        <h1 class="display-3">Weather Dashboard</h1>
+    <header class="d-flex justify-content-center" id="jumboTron">
+        <h1 class="display-3">
+            <b>🌞 Weather Dashboard ☔</b>
+        </h1>
     </header>
 
     <!-- Weather Primary Div Content -->
 
 
     <!-- Overall Dashboard -->
-    <div id="overallDashboard" class="row d-flex justify-content-center">
+    <div class="row d-flex justify-content-center">
 
         <!-- City Search-->
         <section class="col-4" id="citySearch">
-
-            Search For a City:
             <br>
-            <textarea id="cityTextArea"></textarea>
+            <br>
+            <b>Search For a City:</b>
+            <br>
+            <br>
+            <textarea placeholder="🍂 City Name 🍂" id="cityTextArea"></textarea>
+            <br>
             <br>
             <button id="searchButton">Search</button>
+            <br>
+            <br>
             <article id="priorCityContainer"></article>
 
         </section>
@@ -41,7 +48,7 @@
             <!-- Current Day Forecast -->
             <article id="currentDayForecast" class="col-12">
                 <br>
-                Current Weather:
+                <b>Current Weather:</b>
                 <br>
                 <ul id="currDayList">
                 </ul>
@@ -50,7 +57,7 @@
             <!-- 5-Day Forecast: -->
             <article id="fiveDayForecast" class="col-12">
                 <br>
-                5-Day Forecast:
+                <b>5-Day Forecast:</b>
                 <br>
                 <ul id="fiveDayList">
                 </ul>
