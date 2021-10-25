@@ -35,6 +35,7 @@ searchButton.addEventListener("click", function () {
     var listItemEl = document.createElement("button");
     listItemEl.className = "priorCity col-12";
     listItemEl.textContent = cityTextContent;
+    listItemEl.addEventListener("click", priorFunction,false);
     priorCityContainer.appendChild(listItemEl);
 
     //Store Cities
