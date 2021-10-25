@@ -1,7 +1,7 @@
 # Weather Dashboard
 ## Description
 
-This application is intended to enable the user for searching weather by city name. 
+This application is intended to enable the user to assess current weather status and five-day forecast by city. 
 
 ## Installation
 * None
